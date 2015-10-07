@@ -16,9 +16,7 @@
 		<div class="pagination" style="margin-top: 20px; margin-left: -20px; ">
 			<span class="step-links">
 				{% if posts.has_previous % }
-                    {% if posts.previous_page_number > 1 % }
-                        <a href= "?page={{ posts.previous_page_number }}">newer entries &lt;&lt; </a>
-                    {% end if % }
+                    <a href= "?page={{ previous }}">newer entries &lt;&lt; </a>
                 {% endif % }
 
                 <span class="current">
