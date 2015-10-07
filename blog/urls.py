@@ -1,5 +1,5 @@
 __author__ = 'gcampbell01'
-from django.conf import url
+from django.conf import urls
 from . import views
 
 urlpatterns = [
