@@ -18,4 +18,5 @@ def main(request):
 	except (InvalidPage, EmptyPage):
 	    posts = paginator.page(paginator.num_pages)
 
-	return render("list.html", dict(posts=posts, user=request.user))
+        return render(request, "list.html", dict(posts=posts, user=request.user))
+#   return render("list.html", dict(posts=posts, user=request.user))
