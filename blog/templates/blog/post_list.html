@@ -1,11 +1,16 @@
-<div>
-    <h1><a href="/">Test Blog</a></h1>
-</div>
-
-{% for post in posts %}
+<html>
+    <head>
+        <title>This is a test blog</title>
+    </head>
     <div>
-        <p>published: {{ post.published_date }}</p>
-        <h1><a href="">{{ post.title }}</a></h1>
-        <p>{{ post.text|linebreaks }}</p>
+        <h1><a href="/">Test Blog</a></h1>
     </div>
-{% endfor %}
+
+    {% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaks }}</p>
+        </div>
+    {% endfor %}
+</html>
