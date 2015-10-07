@@ -12,15 +12,17 @@
     </div>
     <div class="content container">
         <div class="row">
-            {% for post in posts %}
-                <div class="post">
-                    <div class="date">
-                        <h1><a href="">{{ post.title }}</a></h1>
+            <div class="col-md-8">
+                {% for post in posts %}
+                    <div class="post">
+                        <div class="date">
+                            <h1><a href="">{{ post.title }}</a></h1>
+                        </div>
+                     <p>{{ post.text|linebreaks }}</p>
+                     <p>published: {{ post.published_date }}</p>
                     </div>
-                    <p>{{ post.text|linebreaks }}</p>
-                    <p>published: {{ post.published_date }}</p>
-                </div>
-        {% endfor %}
+                 {% endfor %}
+            </div>
         </div>
     </div>
 
