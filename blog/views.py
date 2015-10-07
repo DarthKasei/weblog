@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
-from django.core.urlresolvers import reverse
 
 from blog.models import *
 
