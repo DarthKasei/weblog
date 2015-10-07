@@ -7,15 +7,21 @@
         <link rel="stylesheet" href="{% static "css/blog.css" %}">
         <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
     </head>
-    <div>
+    <div class="page-header">
         <h1><a href="/">Test Blog</a></h1>
     </div>
-
-    {% for post in posts %}
-        <div>
-            <h1><a href="">{{ post.title }}</a></h1>
-            <p>{{ post.text|linebreaks }}</p>
-            <p>published: {{ post.published_date }}</p>
+    <div class="content container">
+        <div class="row">
+            {% for post in posts %}
+                <div class="post">
+                    <div class="date">
+                        <h1><a href="">{{ post.title }}</a></h1>
+                    </div>
+                    <p>{{ post.text|linebreaks }}</p>
+                    <p>published: {{ post.published_date }}</p>
+                </div>
+        {% endfor %}
         </div>
-    {% endfor %}
+    </div>
+
 </html>
