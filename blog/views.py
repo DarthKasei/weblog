@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from django.core.urlresolvers import reverse
 
-from dbe.blog.models import *
+from blog.models import *
 
 # Create your views here.
 
@@ -19,4 +19,4 @@ def main(request):
 	except (InvalidPage, EmptyPage):
 	    posts = paginator.page(paginator.num_pages)
 
-	return render_to_reponse("list.html", dict(posts=posts, user=request.user))
+	return render("list.html", dict(posts=posts, user=request.user))
