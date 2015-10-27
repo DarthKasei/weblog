@@ -35,3 +35,11 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.text
+
+class Page(models.Model):
+    title = models.CharField(max_length=200)
+    author = models.ForeignKey('auth.User')
+    text = models.TextField()
+
+    def __str__(self):
+        return self.text

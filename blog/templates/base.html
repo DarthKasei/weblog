@@ -1,0 +1,36 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Foolon MCC</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static "css/blog.css" %}">
+    </head>
+    <body>
+        <div class="page-header">
+
+            <ul>
+                <h1><a href="{% url 'page_detail' name='home' %}">Fool-On Motorcycle Club</a></h1>
+                <li><a href="{% url 'page_detail' name='home' %}">Home</a></li>
+                <li><a href="/">News</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#forums">Forums</a></li>
+                <li><a href="{% url 'page_detail' name='history' %}">History</a></li>
+                <li><a href="{% url 'page_detail' name='contact' %}">Contact</a></li>
+                <li><a href="{% url 'page_detail' name='about' %}">About</a></li>
+                {% if user.is_authenticated %}
+                    <li><p class="top-menu">Hello {{ user.username }}<small>(<a href="{% url 'django.contrib.auth.views.logout' %}">Log out</a>)</small></p></li>
+                {% endif %}
+            </ul>
+        </div>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

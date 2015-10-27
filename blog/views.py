@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
-from .models import Post, Comment
+from .models import Post, Comment, Page
 from .forms import PostForm, CommentForm
 # Create your views here.
 
@@ -84,3 +84,7 @@ def comment_remove(request, pk):
     post_pk = comment.post.pk
     comment.delete()
     return redirect('blog.views.post_detail', pk=post_pk)
+
+def page_detail(request, name):
+    page = get_object_or_404(Page , title=name)
+    return render(request, 'blog/page_detail.html', {'page':page})
