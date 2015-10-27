@@ -9,7 +9,12 @@
     </head>
     <body>
         <div class="page-header">
+
             <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">About</a></li>
                 {% if user.is_authenticated %}
                     <li><a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a></li>
                     <li><a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a></li>
