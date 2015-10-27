@@ -85,6 +85,6 @@ def comment_remove(request, pk):
     comment.delete()
     return redirect('blog.views.post_detail', pk=post_pk)
 
-def page_detail(request, name):
-    page = get_object_or_404(Page , title=name)
+def page_detail(request, pagename):
+    page = get_object_or_404(Page , title=pagename)
     return render(request, 'blog/page_detail.html', {'page':page})

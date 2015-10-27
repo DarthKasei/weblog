@@ -11,14 +11,14 @@
         <div class="page-header">
 
             <ul>
-                <h1><a href="{% url 'page_detail' name='home' %}">Fool-On Motorcycle Club</a></h1>
-                <li><a href="{% url 'page_detail' name='home' %}">Home</a></li>
-                <li><a href="/">News</a></li>
-                <li><a href="#gallery">Gallery</a></li>
+                <h1><a href="{% url 'page_detail' pagename='home' %}">Fool-On Motorcycle Club</a></h1>
+                <li><a href="{% url 'page_detail' pagename='home' %}">Home</a></li>
+                <li><a href="{% url 'post_list' %}">News</a></li>
+                <li><a href="{% url 'photologue:gallery-list' %}">Gallery</a></li>
                 <li><a href="#forums">Forums</a></li>
-                <li><a href="{% url 'page_detail' name='history' %}">History</a></li>
-                <li><a href="{% url 'page_detail' name='contact' %}">Contact</a></li>
-                <li><a href="{% url 'page_detail' name='about' %}">About</a></li>
+                <li><a href="{% url 'page_detail' pagename='history' %}">History</a></li>
+                <li><a href="{% url 'page_detail' pagename='contact' %}">Contact</a></li>
+                <li><a href="{% url 'page_detail' pagename='about' %}">About</a></li>
                 {% if user.is_authenticated %}
                     <li><p class="top-menu">Hello {{ user.username }}<small>(<a href="{% url 'django.contrib.auth.views.logout' %}">Log out</a>)</small></p></li>
                 {% endif %}
